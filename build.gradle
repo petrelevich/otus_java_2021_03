@@ -30,6 +30,8 @@ allprojects {
                 mavenBom("org.springframework.boot:spring-boot-dependencies:2.4.4")
             }
             dependency("com.google.guava:guava:${Versions.guava}")
+            dependency("org.openjdk.jmh:jmh-core:${Versions.jmh}")
+            dependency("org.openjdk.jmh:jmh-generator-annprocess:${Versions.jmh}")
         }
     }
 
