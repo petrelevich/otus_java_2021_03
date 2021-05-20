@@ -27,7 +27,7 @@ public class LiskovSubstitution {
         System.out.println("height:" + height + " rectangle.height:" + rectangle.height);
         System.out.println("width:" + width + " rectangle.width:" + rectangle.width);
 
-        Rectangle rectangleStrange = new Square();
+        Rectangle rectangleStrange = new Square(); // factory.createRectangle()
         rectangleStrange.setHeight(height);
         rectangleStrange.setWidth(width);
 

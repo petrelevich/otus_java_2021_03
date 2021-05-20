@@ -24,7 +24,7 @@ public class SimplePolymorpism {
 
 //        Collections.sort();
 //        Collections.addAll();
-//        Collections.copy()
+//        Collections.copy();
     }
 
     private static void doSomethingWithListBad(ArrayList list) {
