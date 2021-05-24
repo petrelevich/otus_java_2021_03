@@ -7,7 +7,7 @@ public class Demo {
     }
 
     private static void security() {
-        var proxy = new SecurityProxy(new SecurityAccessImpl());
+        SecurityAccess proxy = new SecurityProxy(new SecurityAccessImpl());
         proxy.access();
     }
 }
