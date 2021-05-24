@@ -8,12 +8,11 @@ public class HistoryListener implements Listener, HistoryReader {
 
     @Override
     public void onUpdated(Message msg) {
-        //throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Optional<Message> findMessageById(long id) {
-        //throw new UnsupportedOperationException();
-        return null;
+        throw new UnsupportedOperationException();
     }
 }
