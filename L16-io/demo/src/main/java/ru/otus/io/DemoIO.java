@@ -21,7 +21,7 @@ public class DemoIO {
         System.out.println("current dir: " + System.getProperty("user.dir"));
         // copyFile("textFile.txt");
         // writeObject("person.bin");
-        // readObject("person.bin");
+         readObject("person.bin");
         // writeTextFile("textFile.txt");
         // readTextFile("textFile.txt");
 
