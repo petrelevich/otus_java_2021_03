@@ -22,7 +22,9 @@ class HistoryListenerTest {
         var id = 100L;
         var data = "33";
         var field13 = new ObjectForMessage();
-        field13.setData(List.of(data));
+        var field13Data = new ArrayList<String>();
+        field13Data.add(data);
+        field13.setData(field13Data);
 
         var message = new Message.Builder(id)
                 .field10("field10")
@@ -32,6 +34,7 @@ class HistoryListenerTest {
         //when
         historyListener.onUpdated(message);
 //TODO: раскоментировать        message.getField13().setData(new ArrayList<>()); //меняем исходное сообщение
+//TODO: раскоментировать        field13Data.clear(); //меняем исходный список
 
         //then
         var messageFromHistory = historyListener.findMessageById(id);
