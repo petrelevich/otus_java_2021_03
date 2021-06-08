@@ -15,7 +15,7 @@ class HistoryListenerTest {
 
     @Test
     @Disabled //надо удалить
-    void ListenerTest() {
+    void listenerTest() {
         //given
         var historyListener = new HistoryListener();
 
