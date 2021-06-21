@@ -1,0 +1,3 @@
+rootProject.name = 'L20-hibernate'
+include 'ext-demo'
+include 'main-demo'

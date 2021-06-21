@@ -28,4 +28,5 @@ include 'L18-jdbc:homework'
 
 include 'L19-rdbms'
 
-include 'L20-hibernate'
+include 'L20-hibernate:ext-demo'
+include 'L20-hibernate:main-demo'
