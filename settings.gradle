@@ -30,3 +30,5 @@ include 'L19-rdbms'
 
 include 'L20-hibernate:ext-demo'
 include 'L20-hibernate:main-demo'
+
+include 'L21-JPQL'
