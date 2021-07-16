@@ -25,7 +25,7 @@ public class HiberDemo {
         var demo = new HiberDemo();
 
         // demo.lifecycleDemo();
-        // demo.leakageDemo();
+         demo.leakageDemo();
 
         // demo.fetchExample();
         // demo.jpqlExample();
@@ -82,6 +82,7 @@ public class HiberDemo {
     }
 
     private void leakageDemo() {
+        long createdPersonId;
         try (var session = sessionFactory.openSession()) {
             var transaction = session.getTransaction();
             transaction.begin();
@@ -98,9 +99,17 @@ public class HiberDemo {
             //session.detach(person);
             deepInIn(person);
 
-            var selected = session.load(Person.class, person.getId());
+            createdPersonId = person.getId();
+            var selected = session.load(Person.class, createdPersonId);
+
             logger.info("selected: {}", selected);
         }
+
+        try (var session = sessionFactory.openSession()) {
+            var selected = session.load(Person.class, createdPersonId);
+            logger.info("selected_2: {}", selected);
+        }
+
     }
 
     //Далекая часть программы
