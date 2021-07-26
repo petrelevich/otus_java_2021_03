@@ -35,7 +35,7 @@ public class DeadlockDemo {
         long[] threads = ManagementFactory.getThreadMXBean().findDeadlockedThreads();
         if (threads != null) {
             ThreadInfo[] threadInfo = ManagementFactory.getThreadMXBean().getThreadInfo(threads);
-            logger.info(Arrays.toString(threadInfo));
+            logger.info("blocked threads:{}", Arrays.toString(threadInfo));
         }
     }
 
@@ -60,7 +60,7 @@ public class DeadlockDemo {
         }
     }
 
-    class Resource {
+    private static class Resource {
         private final String name;
 
         Resource(String name) {
