@@ -19,7 +19,7 @@ public class ClientNIO {
     private static final String HOST = "localhost";
 
     public static void main(String[] args) throws InterruptedException {
-          new Thread(() -> new ClientNIO().go("wait")).start();
+      //    new Thread(() -> new ClientNIO().go("wait")).start();
         Thread.sleep(10);
         new Thread(() -> new ClientNIO().go("testData_1")).start();
         new Thread(() -> new ClientNIO().go("testData_2")).start();
