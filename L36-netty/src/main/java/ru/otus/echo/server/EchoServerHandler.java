@@ -13,15 +13,15 @@ import org.slf4j.LoggerFactory;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
     private static final Logger logger = LoggerFactory.getLogger(EchoServerHandler.class);
     private final ByteBuf bufForInMsg = new PooledByteBufAllocator(true).directBuffer(5);
-    private final ExecutorService requestExecutor = Executors.newFixedThreadPool(3);
+    private final ExecutorService requestExecutor;
 
-    public EchoServerHandler() {
+    public EchoServerHandler(ExecutorService requestExecutor) {
         logger.info("new EchoServerHandler created");
+        this.requestExecutor = requestExecutor;
     }
 
     @Override

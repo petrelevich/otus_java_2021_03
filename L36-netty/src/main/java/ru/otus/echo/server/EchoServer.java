@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.InetSocketAddress;
+import java.util.concurrent.Executors;
 
 /*
 --add-exports java.base/jdk.internal.misc=ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible=true
@@ -23,6 +24,7 @@ public class EchoServer {
 
     private void start() throws InterruptedException {
         var eventLoopGroup = new NioEventLoopGroup(1);
+        var requestExecutor = Executors.newFixedThreadPool(3);
         try {
             var serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(eventLoopGroup)
@@ -31,7 +33,7 @@ public class EchoServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) {
-                            ch.pipeline().addLast(new EchoServerHandler());
+                            ch.pipeline().addLast(new EchoServerHandler(requestExecutor));
                         }
                     });
 
