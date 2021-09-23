@@ -42,6 +42,8 @@ allprojects {
             dependency("org.webjars:sockjs-client:${Versions.sockjs}")
             dependency("org.webjars:stomp-websocket:${Versions.stomp}")
             dependency("org.webjars:bootstrap:${Versions.bootstrap}")
+            dependency("io.springfox:springfox-boot-starter:${Versions.swagger}")
+
             dependency("com.google.code.findbugs:jsr305:${Versions.jsr305}")
 
             dependency("io.grpc:grpc-netty:${Versions.grpc}")

@@ -1,5 +1,7 @@
 package ru.otus.mainpackage.welcome;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +22,11 @@ public class GreetingControllerRstyle {
     }
 
     //http://localhost:8080/hello/jone
+    @ApiOperation("Пример документирования Endpoint")
     @GetMapping(value="/hello/{name}")
-    public Map<String, String> sayHello(@PathVariable("name") String name) {
+    public Map<String, String> sayHello(
+            @ApiParam("Описание параметра")
+            @PathVariable("name") String name) {
         return this.greetingService.sayHello(name);
     }
 }
